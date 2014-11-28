@@ -8,7 +8,7 @@
 import java.util.Random;
 import java.util.ArrayList;
 
-public class Deck 
+public class Deck
 {
    /** 
    *  Number of cards in standard deck {@value #CARDS_IN_DECK}
@@ -25,7 +25,7 @@ public class Deck
     */
    public Deck()
    {
-            freshDeck();
+      freshDeck();
    }
    /**
     * Create a new collection of 52 cards, in sorted order
@@ -33,11 +33,11 @@ public class Deck
    public void freshDeck()
    {
       deck = new ArrayList<Card>();
-      System.out.println(deck.size());
+      //System.out.println(deck.size());
 
       for (int r = Card.ACE; r<=Card.KING;r++)
       {
-         for (int s=Card.SPADES;s<=Card.CLUBS;s++)
+         for (int s=Card.SPADES;s<=Card.DIAMONDS;s++)
          {
            deck.add(new Card(r,s));
          }
@@ -92,37 +92,41 @@ public class Deck
 
    public static void main(String [] args) 
    {
-      Deck1 deck = new Deck1();
-      deck.shuffle();
-      int i = 0;
-      while (!(deck.isEmpty()))
-         System.out.println(i++ + " : " + deck.dealCard().toString());
-      System.out.println(deck.cardsRemaining());
+      Deck deck = new Deck();
       deck.freshDeck();
+      //int i = 0;
       while (!(deck.isEmpty()))
-         System.out.println(i++ + " : " + deck.dealCard().toString());
+         System.out.println(deck.dealCard().toString());
+         //System.out.println(i++ + " : " + deck.dealCard().toString());
          
-      Card c1 = new Card(Card.ACE,Card.HEARTS);
-      Card c2 = new Card(Card.JACK,Card.SPADES);
-      Card c3 = new Card(4,Card.HEARTS);
-      
-      System.out.println(highCard(c1,c2,c3));
+         
+         
+      // System.out.println(deck.cardsRemaining());
+//       deck.freshDeck();
+//       while (!(deck.isEmpty()))
+//          System.out.println(i++ + " : " + deck.dealCard().toString());
+//          
+//       Card c1 = new Card(Card.ACE,Card.HEARTS);
+//       Card c2 = new Card(Card.JACK,Card.SPADES);
+//       Card c3 = new Card(4,Card.HEARTS);
+//       
+//       System.out.println(highCard(c1,c2,c3));
       
 
    }
-   public static Card highCard(Card...cards)
-   {
-   
-      Card high = cards[0];
-      for (int i=1;i<cards.length;i++)
-      {
-         if (cards[i].getRank() > high.getRank())
-         {
-         
-            high = cards[i];
-         }
-      }
-      return high;
-   
-   }
+   // public static Card highCard(Card...cards)
+//    {
+//    
+//       Card high = cards[0];
+//       for (int i=1;i<cards.length;i++)
+//       {
+//          if (cards[i].getRank() > high.getRank())
+//          {
+//          
+//             high = cards[i];
+//          }
+//       }
+// //       return high;
+//    
+//    }
 }

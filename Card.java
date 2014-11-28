@@ -1,99 +1,137 @@
+// Noah Hall-Potvin
+// CS 110
+// Final Project
+
+/*
+   The Card class represents a single 
+   playing card from a standard 52 card deck.
+*/ 
+
 public class Card
-{
-	private int rank;
-	private int suit; 
-	public final int SPADES=0;
-	public final int CLUBS=1;
-	public final int HEARTS=2;
-	public final int DIAMONDS=3;
-	public final int ACE=13;
-	public final int JACK=10;
-	public final int QUEEN=11;
-	public final int KING=12;
-
-	/**
-		This default constructor sets the class suit and rank from user input
-		@param suit The suit of the card
-		@param rank The value of the card
-	*/
-	public Card(int suit, int rank)
-	{
-		this.rank = rank;
-      	this.suit = suit;
-	}
-	/**
-		This method returns the value of the suit
-		@return suit The type of card
-	*/
-	public int getSuit ()
-	{
-		return suit;
-	}
-	/**
-		This method returns the value of the card
-		@return rank The value of the card
-	*/
-	public int getRank()
-	{
-		return rank;
-	}
-	/**
-		This method converts the state of the card to a string
-		@return nameofCard The rank and suit of the card
-	*/
-	public String toString()
-	{
-		String suitCheck;
-		String rankCheck;
-
-		switch(rank)
-		{
-			case ACE: rankCheck = "Ace";
-			break;
-			case KING: rankCheck = "King";
-			break;
-			case QUEEN: rankCheck = "Queen";
-			break;
-			case JACK: rankCheck = "Jack";
-			break;
-			default: rankCheck = ""+rank;
-			break;
-
-		}
-
-		switch(suit)
-		{
-			case SPADES: suitCheck = "Spades";
-			break;
-			case CLUBS: suitCheck = "Clubs";
-			break;
-			case HEARTS: suitCheck = "Hearts";
-			break;
-			case DIAMONDS: suitCheck = "Diamonds";
-			break;
-			default: suitCheck = ""+rank;
-		}
-
-		String nameOfCard = (rankCheck+" of "+suitCheck);
-		return nameOfCard;
-	}
-	/**
-		This method determines whether or not the two cards are equal
-		@param otherCard The other card created by the user
-		@return bool Whether or not the two cards are equal
-	*/
-	public Boolean equals(Card otherCard)
-	{
-		boolean bool;
-		if (rank == otherCard.getRank())
-		{
-			bool = true;
-		}
-		else
-		{	
-			bool = false;
-		}
-		return bool;
-	}
-
+{   
+   //initialize constants
+   public final static int SPADES = 1;
+   public final static int CLUBS = 2;
+   public final static int HEARTS = 3;
+   public final static int DIAMONDS = 4;
+   public final static int JACK = 11;
+   public final static int QUEEN = 12;
+   public final static int KING = 13;
+   public final static int ACE = 1;
+   private int rank; //rank of card
+   private int suit; //suit of card
+ 
+   /**
+      This constructor initializes the 
+      suit and rank of the card.
+      @param s The suit of the card.
+      @param r The rank of the card.
+   */
+   
+   public Card(int r, int s)
+   {
+      rank = r;
+      suit = s;
+   }
+   
+   /**
+      The getSuit method returns the suit of the card.
+      @return The suit of the card.
+   */
+   
+   public int getSuit()
+   {
+      return suit;
+   }
+   
+   /**
+      The getRank method returns the rank of the card.
+      @return The rank of the card.
+   */
+   
+   public int getRank()
+   {
+      return rank;
+   }
+   
+   /**
+      The stringSuit method returns the suit as a string.
+      @return The suit as a String.
+   */
+   
+   public String stringSuit()
+   {
+      if (suit == 1)
+         return "Spades";
+      
+      else if (suit == 2)
+         return "Clubs";
+         
+      else if (suit == 3)
+         return "Hearts";
+         
+      else if (suit == 4)
+         return "Diamonds";
+      else
+         return "invalid suit";
+   } 
+   
+   /**
+      The stringRank method returns the rank as a String.
+      @return The rank as a String.
+   */
+   
+   public String stringRank()
+   {
+      if (rank == 1)
+         return "Ace";
+         
+      else if (rank == 11)
+         return "Jack";
+         
+      else if (rank == 12)
+         return "Queen";
+         
+      else if (rank == 13)
+         return "King";
+      
+      else
+         return "invalid rank";
+   }
+      
+   /**
+      toString mehtod
+      @return A string indicating 
+              the object's suit and rank.
+   */
+   
+   public String toString()
+   {
+      String s;
+      if ((rank == ACE) || (rank >= JACK))
+      {
+         s = stringRank() + " of " + stringSuit();
+         return s;
+      }
+      else
+      {
+         s = getRank() + " of " + stringSuit();
+         return s;
+      }
+   }
+   
+   /**
+      The equals method compares two Month objects.
+      They are equal if they contain the same rank.
+      @param other The other month that you are comparing to.
+      @return True or False.
+   */
+   
+   public boolean equals(Card otherCard)
+   {
+      if (rank == (otherCard.rank))
+         return true;
+      return false;
+   }
+   
 }
