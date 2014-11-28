@@ -23,7 +23,7 @@ public class Deck
     * are in a sorted order.  The shuffle() method can be called to
     * randomize the order.  
     */
-   public Deck1()
+   public Deck()
    {
             freshDeck();
    }
