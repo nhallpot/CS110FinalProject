@@ -13,7 +13,7 @@ public class Deck
    /** 
    *  Number of cards in standard deck {@value #CARDS_IN_DECK}
    **/
-   final int CARDS_IN_DECK = 52;
+   final int CARDS_IN_DECK = 12;
 
    /** The collection of Cards */
    private ArrayList<Card> deck;
@@ -90,43 +90,9 @@ public class Deck
       return (deck.size() == 0);
    }
 
-   public static void main(String [] args) 
+   public void add(Card card)
    {
-      Deck deck = new Deck();
-      deck.freshDeck();
-      //int i = 0;
-      while (!(deck.isEmpty()))
-         System.out.println(deck.dealCard().toString());
-         //System.out.println(i++ + " : " + deck.dealCard().toString());
-         
-         
-         
-      // System.out.println(deck.cardsRemaining());
-//       deck.freshDeck();
-//       while (!(deck.isEmpty()))
-//          System.out.println(i++ + " : " + deck.dealCard().toString());
-//          
-//       Card c1 = new Card(Card.ACE,Card.HEARTS);
-//       Card c2 = new Card(Card.JACK,Card.SPADES);
-//       Card c3 = new Card(4,Card.HEARTS);
-//       
-//       System.out.println(highCard(c1,c2,c3));
-      
-
+      deck.add(card);
    }
-   // public static Card highCard(Card...cards)
-//    {
-//    
-//       Card high = cards[0];
-//       for (int i=1;i<cards.length;i++)
-//       {
-//          if (cards[i].getRank() > high.getRank())
-//          {
-//          
-//             high = cards[i];
-//          }
-//       }
-// //       return high;
-//    
-//    }
+
 }
