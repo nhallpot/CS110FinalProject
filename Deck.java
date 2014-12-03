@@ -13,7 +13,7 @@ public class Deck
    /** 
    *  Number of cards in standard deck {@value #CARDS_IN_DECK}
    **/
-   final int CARDS_IN_DECK = 12;
+   final int CARDS_IN_DECK = 52;
 
    /** The collection of Cards */
    private ArrayList<Card> deck;

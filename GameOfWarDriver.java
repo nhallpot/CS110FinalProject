@@ -23,6 +23,7 @@ public class GameOfWarDriver
 		// Create a deck for both users
 		Deck firstPlayerDeck = new Deck();
 		Deck secondPlayerDeck = new Deck();
+      
 
 		// Shuffle each deck
 		firstPlayerDeck.shuffle();
@@ -36,16 +37,25 @@ public class GameOfWarDriver
 			// Have each user lay down the top card off of their deck
 			Card firstPlayerCard = firstPlayerDeck.dealCard();
 			Card secondPlayerCard = secondPlayerDeck.dealCard();
+         System.out.println(firstPlayerCard);
+         System.out.println(secondPlayerCard);
+         System.out.println(secondPlayerDeck.cardsRemaining());
+         System.out.println(firstPlayerDeck.cardsRemaining());
 
 			// Compare each card
 			// Higher card takes the other card and adds it to their deck (make sure other deck is subtracted)
 			if (firstPlayerCard.getRank() > secondPlayerCard.getRank())
 			{
 				firstPlayerDeck.add(secondPlayerCard);
+       		firstPlayerDeck.add(secondPlayerCard);
+            secondPlayerDeck.cardsRemaining();
+            firstPlayerDeck.cardsRemaining();
+
 			}
 			else if (firstPlayerCard.getRank() < secondPlayerCard.getRank())
 			{
 				secondPlayerDeck.add(firstPlayerCard);
+            secondPlayerDeck.add(secondPlayerCard);
 			}
 
 			/// If they are equal, game of war
@@ -70,8 +80,8 @@ public class GameOfWarDriver
 					System.out.println(warWinnings.size());
 					/// Comapre the cards
 					///Higher card takes the other card and adds all of the cards (show all of the cards in the game of war)
-					Card firstPlayerCard = firstPlayerDeck.dealCard();
-					Card secondPlayerCard = secondPlayerDeck.dealCard();
+				   firstPlayerCard = firstPlayerDeck.dealCard();
+				   secondPlayerCard = secondPlayerDeck.dealCard();
 
 					// Compare each card
 					// Higher card takes the other card and adds it to their deck (make sure other deck is subtracted)
