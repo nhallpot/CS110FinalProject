@@ -25,7 +25,7 @@ public class Deck
     */
    public Deck()
    {
-      freshDeck();
+      deck= new ArrayList<Card>();
    }
    /**
     * Create a new collection of 52 cards, in sorted order

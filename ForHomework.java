@@ -14,8 +14,8 @@ public class ForHomework extends JFrame
       button.addActionListener(new ButtonListener());
       add(button);
       
-      front = new ImageIcon("aces.jpg");
-      back = new ImageIcon("back.jpg");
+      front = new ImageIcon("images/10c.jpg");
+      back = new ImageIcon("images/10d.jpg");
       pic = new JLabel(back);     
       add(pic);
       

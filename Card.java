@@ -7,6 +7,10 @@
    playing card from a standard 52 card deck.
 */ 
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
 public class Card
 {   
    //initialize constants
@@ -133,5 +137,24 @@ public class Card
          return true;
       return false;
    }
+
+   /**
+      This method will return a label that represents a card
+   */
+//    public JLabel getCardImage(int rank, int suit)
+//    {
+//       private JLabel pic;
+//       private ImageIcon front;
+// 
+//       if(suit=SPADES)
+//       {
+//          if(rank=2)
+//          {
+//             front = new ImageIcon("images/2s.jpg");
+//             pic
+//          }
+// 
+//       }
+//    }
    
 }
