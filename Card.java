@@ -144,9 +144,8 @@ public class Card
       @param suit The suit of the card
       @return pic The picture of the card
    */
-   public JLabel getCardImage(int rank, int suit)
+   public ImageIcon getCardImage(int rank, int suit)
    {
-       JLabel pic = new JLabel();
        ImageIcon front = new ImageIcon();
 
       if(suit==SPADES)
@@ -407,9 +406,8 @@ public class Card
          }
       }
       
-   pic.setIcon(front);
 
-   return pic;   
+   return front;   
    }
    
 }
