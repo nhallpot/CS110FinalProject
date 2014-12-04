@@ -140,21 +140,276 @@ public class Card
 
    /**
       This method will return a label that represents a card
+      @param rank The rank of the card
+      @param suit The suit of the card
+      @return pic The picture of the card
    */
-//    public JLabel getCardImage(int rank, int suit)
-//    {
-//       private JLabel pic;
-//       private ImageIcon front;
-// 
-//       if(suit=SPADES)
-//       {
-//          if(rank=2)
-//          {
-//             front = new ImageIcon("images/2s.jpg");
-//             pic
-//          }
-// 
-//       }
-//    }
+   public JLabel getCardImage(int rank, int suit)
+   {
+       JLabel pic = new JLabel();
+       ImageIcon front = new ImageIcon();
+
+      if(suit==SPADES)
+      {
+         if(rank == ACE)
+         {
+            front = new ImageIcon("images/aces.jpg");
+         }
+         else if(rank==2)
+         {
+            front = new ImageIcon("images/2s.jpg");
+         }
+         else if(rank==3)
+         {
+            front = new ImageIcon("images/3s.jpg");
+         }
+         else if(rank==4)
+         {
+            front = new ImageIcon("images/4s.jpg");
+         }
+
+         else if(rank==5)
+         {
+            front = new ImageIcon("images/5s.jpg");
+         }
+
+         else if(rank==6)
+         {
+            front = new ImageIcon("images/6s.jpg");
+         }
+
+         else if(rank==7)
+         {
+            front = new ImageIcon("images/7s.jpg");
+         }
+
+         else if(rank==8)
+         {
+            front = new ImageIcon("images/8s.jpg");
+         }
+
+         else if(rank==9)
+         {
+            front = new ImageIcon("images/9s.jpg");
+         }
+
+         else if(rank==10)
+         {
+            front = new ImageIcon("images/10s.jpg");
+         }
+
+         else if(rank==JACK)
+         {
+            front = new ImageIcon("images/jacks.jpg");
+         }
+
+         else if(rank==QUEEN)
+         {
+            front = new ImageIcon("images/queens.jpg");
+         }
+
+         else
+         {
+            front = new ImageIcon("images/kings.jpg");
+         }
+
+      }
+      else if(suit == CLUBS)
+      {
+         if(rank == ACE)
+         {
+            front = new ImageIcon("images/acec.jpg");
+         }
+         else if(rank==2)
+         {
+            front = new ImageIcon("images/2c.jpg");
+         }
+         else if(rank==3)
+         {
+            front = new ImageIcon("images/3c.jpg");
+         }
+         else if(rank==4)
+         {
+            front = new ImageIcon("images/4c.jpg");
+         }
+
+         else if(rank==5)
+         {
+            front = new ImageIcon("images/5c.jpg");
+         }
+
+         else if(rank==6)
+         {
+            front = new ImageIcon("images/6c.jpg");
+         }
+
+         else if(rank==7)
+         {
+            front = new ImageIcon("images/7c.jpg");
+         }
+
+         else if(rank==8)
+         {
+            front = new ImageIcon("images/8c.jpg");
+         }
+
+         else if(rank==9)
+         {
+            front = new ImageIcon("images/9c.jpg");
+         }
+
+         else if(rank==10)
+         {
+            front = new ImageIcon("images/10c.jpg");
+         }
+
+         else if(rank==JACK)
+         {
+            front = new ImageIcon("images/jackc.jpg");
+         }
+
+         else if(rank==QUEEN)
+         {
+            front = new ImageIcon("images/queenc.jpg");
+         }
+
+         else
+         {
+            front = new ImageIcon("images/kingc.jpg");
+         }
+      }
+      else if(suit == HEARTS) // Hearts
+      {
+         if(rank == ACE)
+         {
+            front = new ImageIcon("images/aceh.jpg");
+         }
+         else if(rank==2)
+         {
+            front = new ImageIcon("images/2h.jpg");
+         }
+         else if(rank==3)
+         {
+            front = new ImageIcon("images/3h.jpg");
+         }
+         else if(rank==4)
+         {
+            front = new ImageIcon("images/4h.jpg");
+         }
+
+         else if(rank==5)
+         {
+            front = new ImageIcon("images/5h.jpg");
+         }
+
+         else if(rank==6)
+         {
+            front = new ImageIcon("images/6h.jpg");
+         }
+
+         else if(rank==7)
+         {
+            front = new ImageIcon("images/7h.jpg");
+         }
+
+         else if(rank==8)
+         {
+            front = new ImageIcon("images/8h.jpg");
+         }
+
+         else if(rank==9)
+         {
+            front = new ImageIcon("images/9h.jpg");
+         }
+
+         else if(rank==10)
+         {
+            front = new ImageIcon("images/10h.jpg");
+         }
+
+         else if(rank==JACK)
+         {
+            front = new ImageIcon("images/jackh.jpg");
+         }
+
+         else if(rank==QUEEN)
+         {
+            front = new ImageIcon("images/queenh.jpg");
+         }
+
+         else
+         {
+            front = new ImageIcon("images/kingh.jpg");
+         }
+      }
+      else
+      {
+         if(rank == ACE)
+         {
+            front = new ImageIcon("images/aced.jpg");
+         }
+         else if(rank==2)
+         {
+            front = new ImageIcon("images/2d.jpg");
+         }
+         else if(rank==3)
+         {
+            front = new ImageIcon("images/3d.jpg");
+         }
+         else if(rank==4)
+         {
+            front = new ImageIcon("images/4d.jpg");
+         }
+
+         else if(rank==5)
+         {
+            front = new ImageIcon("images/5d.jpg");
+         }
+
+         else if(rank==6)
+         {
+            front = new ImageIcon("images/6d.jpg");
+         }
+
+         else if(rank==7)
+         {
+            front = new ImageIcon("images/7d.jpg");
+         }
+
+         else if(rank==8)
+         {
+            front = new ImageIcon("images/8d.jpg");
+         }
+
+         else if(rank==9)
+         {
+            front = new ImageIcon("images/9d.jpg");
+         }
+
+         else if(rank==10)
+         {
+            front = new ImageIcon("images/10d.jpg");
+         }
+
+         else if(rank==JACK)
+         {
+            front = new ImageIcon("images/jackd.jpg");
+         }
+
+         else if(rank==QUEEN)
+         {
+            front = new ImageIcon("images/queend.jpg");
+         }
+
+         else
+         {
+            front = new ImageIcon("images/kingd.jpg");
+         }
+      }
+      
+   pic.setIcon(front);
+
+   return pic;   
+   }
    
 }
