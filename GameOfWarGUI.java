@@ -13,9 +13,11 @@ public class GameOfWarGUI extends JFrame
    private JButton dealButton;
    private JLabel warWinngings,warLabel,pic,pic2,firstPlayerCardsRemaining,secondPlayerCardsRemaining;
    private JLabel pic3,secondPlayerWarCardLabel,firstPlayerCardLabel,secondPlayerCardLabel,warTextLabel,firstPlayerWarCardLabel;
+   private JLabel outcome;
    private ImageIcon front,back;
    private Deck deck,firstPlayerDeck,secondPlayerDeck;
-   private JPanel panel1,panel2,panel3,panel4,panel5, panel11,panel22,panel33,panel44,panel55;
+   private JPanel panel1,panel2,panel3,panel4,panel5, panel11,panel22,panel33,panel44,panel55,panel551,panel552,panel553;
+
    public final int CARDS_FOR_WAR = 3;
 
    /**
@@ -62,7 +64,13 @@ public class GameOfWarGUI extends JFrame
        panel33 = new JPanel();
        panel44 = new JPanel();
        panel55 = new JPanel();
+       
+       panel551 = new JPanel();
+       panel552 = new JPanel();
+       panel553 = new JPanel();
+       
       panel5.setLayout(new BorderLayout());
+      panel55.setLayout(new BorderLayout());
 
 
       //add the buttons to the panels
@@ -83,6 +91,10 @@ public class GameOfWarGUI extends JFrame
       panel5.add(panel33, BorderLayout.EAST);
       panel5.add(panel44, BorderLayout.WEST);
       panel5.add(panel55, BorderLayout.CENTER);
+      
+      panel55.add(panel551, BorderLayout.WEST);
+      panel55.add(panel552, BorderLayout.EAST);
+      panel55.add(panel553, BorderLayout.SOUTH);
 
       // Create labels for the gui
 
@@ -97,20 +109,17 @@ public class GameOfWarGUI extends JFrame
 
       warLabel = new JLabel();
       warTextLabel = new JLabel();
+      
 
       // Create the war lable
       warLabel.setText("It's time for a War!!!");
       warLabel.setVisible(false);
       panel11.add(warLabel);
 
-      // Create the war text lable
-      warTextLabel.setText("War winngings: ");
-      warTextLabel.setVisible(false);
-      panel22.add(warTextLabel);
+      outcome = new JLabel();
+      outcome.setVisible(false);
 
-      pic3 = new JLabel(back);     
-      pic3.setVisible(false);
-      panel22.add(pic3);
+      panel553.add(outcome);
 
       front = new ImageIcon("images/back.jpg");
       back = new ImageIcon("images/back.jpg");
@@ -143,6 +152,8 @@ public class GameOfWarGUI extends JFrame
   	// Put code from CL here
   	if((!(firstPlayerDeck.isEmpty()))&& (!(secondPlayerDeck.isEmpty())))    // Check to make sure each play has cards in their deck
   	{
+      warLabel.setVisible(false);
+      warTextLabel.setVisible(false);
 
 
       // Show the user how many cards each deck has remaining
@@ -198,15 +209,15 @@ public class GameOfWarGUI extends JFrame
   					warWinnings.add(firstPlayerWar);
   					warWinnings.add(secondPlayerWar);
   				}
-          warTextLabel.setVisible(true);
-          pic3.setVisible(true);
+            warTextLabel.setVisible(true);
+            pic3.setVisible(true);
   				/// Comapre the cards
   				///Higher card takes the other card and adds all of the cards (show all of the cards in the game of war)
   				Card firstPlayerCard = firstPlayerDeck.dealCard();
   				Card secondPlayerCard = secondPlayerDeck.dealCard();
-
-          firstPlayerWarCardLabel.setIcon(firstPlayerCardNonWar.getCardImage(firstPlayerCardNonWar.getRank(),firstPlayerCardNonWar.getSuit()));
-          secondPlayerWarCardLabel.setIcon(secondPlayerCardNonWar.getCardImage(secondPlayerCardNonWar.getRank(),secondPlayerCardNonWar.getSuit()));
+   
+            firstPlayerWarCardLabel.setIcon(firstPlayerCardNonWar.getCardImage(firstPlayerCardNonWar.getRank(),firstPlayerCardNonWar.getSuit()));
+            secondPlayerWarCardLabel.setIcon(secondPlayerCardNonWar.getCardImage(secondPlayerCardNonWar.getRank(),secondPlayerCardNonWar.getSuit()));
 
   				// Compare each card
   				// Higher card takes the other card and adds it to their deck (make sure other deck is subtracted)
@@ -245,15 +256,18 @@ public class GameOfWarGUI extends JFrame
       // Determine who won the game
       if(firstPlayerDeck.cardsRemaining()<secondPlayerDeck.cardsRemaining())
       {
-        System.out.println("Computer Wins");
+        outcome.setText("The computer wins");
+        outcome.setVisible(true);
       }
       else if(firstPlayerDeck.cardsRemaining()>secondPlayerDeck.cardsRemaining())
       {
-        System.out.println("You Win!");
+        outcome.setText("You win!");
+        outcome.setVisible(true);
       }
       else
       {
-        System.out.println("It's a Tie!");
+        outcome.setText("It's a tie");
+        outcome.setVisible(true);
       }
 
 
