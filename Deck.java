@@ -7,7 +7,9 @@
 
 import java.util.Random;
 import java.util.ArrayList;
-
+/**
+  This class represents a deck of cards
+*/
 public class Deck
 {
    /** 

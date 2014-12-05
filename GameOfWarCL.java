@@ -11,8 +11,7 @@ import java.util.Scanner;
 
 /**
 	This class will be the driver for a game of war.
-	There will be two users who play the game of war.
-	A GUI will accompany this program.
+	There will be a user and a computer pitted against each other in a vicous game of war, where a full deck of cards is the prize!
 */
 public class GameOfWarCL
 {
